@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{name}}</title>
+    </head>
+    <body>
+        <script>
+            (function(){
+                var script = document.createElement("script")
+                script.type = "text/javascript"
+                script.async = false
+                script.src = "node_modules/{{name}}/bootstrap.js"
+                document.body.appendChild(script)
+                script.onload = function(){
+                    try {
+                        document.write({{name}}.bootstrap.hello())
+                        {{name}}.bootstrap.boot()
+                    } catch(e) {
+                        console.log(e)
+                    }
+                }})()
+        </script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "name": "{{name}}",
+	"main": "index.html",
+	"webkit": {
+		"plugin": true
+	},
+	"js-flags": "--harmony",
+	"private": true,
+	"window": {
+		"width": 1024,
+		"height": 700,
+		"min_height": 400,
+		"min_width": 400,
+		"position": "center",
+		"show": true,
+		"toolbar": true,
+		"frame": true
+	}
+}
