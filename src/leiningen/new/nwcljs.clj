@@ -11,6 +11,7 @@
               :sanitized (name-to-path name)}]
     (main/info "Generating fresh 'lein new' nwcljs project.")
     (->files data
+             [".gitigorne" (render ".gitignore" data)]
              ["Makefile" (render "Makefile" data)]
              ["project.clj" (render "project.clj" data)]
              ["tests/hello.cljs" (render "tests/hello.cljs" data)]
