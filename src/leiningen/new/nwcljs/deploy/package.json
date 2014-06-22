@@ -15,5 +15,9 @@
 		"show": true,
 		"toolbar": true,
 		"frame": true
-	}
+	},
+    "devDependencies":{
+        "mocha":"*",
+        "glob":"*"
+    }
 }

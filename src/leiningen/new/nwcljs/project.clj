@@ -19,7 +19,7 @@
                         :source-paths ["tests"]
                         :compiler {:output-dir "deploy/node_modules/cljstests/"
                                    :output-to "deploy/node_modules/cljstests/cljstests.js"
-                                   :optimizations :simple}}
+                                   :optimizations :none}}
                        {:id "{{name}}-dev"
                         :source-paths ["src"]
                         :compiler {:output-dir "deploy/node_modules/cljsdev/"

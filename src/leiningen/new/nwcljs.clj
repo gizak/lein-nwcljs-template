@@ -15,9 +15,11 @@
              ["Makefile" (render "Makefile" data)]
              ["project.clj" (render "project.clj" data)]
              ["tests/hello.cljs" (render "tests/hello.cljs" data)]
+             ["tests/hi.cljs" (render "tests/hi.cljs" data)]
              ["src/{{sanitized}}/bootstrap.cljs" (render "src/bootstrap.cljs" data)]
              ["deploy/index.html" (render "deploy/index.html" data)]
              ["deploy/package.json" (render "deploy/package.json" data)]
              ["deploy/test/index.js" (render "deploy/test/index.js" data)]
+             ["deploy/goog.js" (render "deploy/goog.js" data)]
              "deploy/node_modules"
              "bin")))

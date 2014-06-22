@@ -1,26 +1,31 @@
 APP = bin/{{name}}.nw
 
-compile: src/{{name}}/* clean
-	@lein cljsbuild once {{name}}
+.PHONY: clean test compile watch run clean-dist compile-test
 
-cli:
-	@node deploy/node_modules/{{name}}/bootstrap.js
+compile: src/{{name}} clean
+	lein cljsbuild once {{name}}
 
-build: compile clean
-	@cd deploy && npm install
-	@cd deploy && zip -r ../$(APP) *
+build: compile
+	cd deploy && npm install
+	cd deploy && zip -r ../$(APP) *
 ifeq ($(shell uname), Linux)
 	`which nw` $(APP)
 else
 	open -n -a node-webkit $(APP)
 endif
 
-dist: cleandist
-	@cd deploy && zip -r ../$(APP) *
+dist: clean-dist
+	cd deploy && zip -r ../$(APP) * -x "node_modules/.bin/*"
+
+watch:
+	lein cljsbuild auto cljstests &
+
+compile-test: tests
+	lein cljsbuild once cljstests
+	cd deploy && npm install
 
 test:
-	@lein cljsbuild once cljstests
-	@cd deploy && mocha --reporter=spec
+	cd deploy && node_modules/.bin/mocha --reporter=spec
 
 run:
 ifeq ($(shell uname), Linux)
@@ -29,10 +34,8 @@ else
 	open -n -a node-webkit $(APP)
 endif
 
-clean: cleandist
-	@lein cljsbuild clean
+clean: clean-dist
+	lein cljsbuild clean
 
-cleandist:
-	@rm -f $(APP)
-
-.PHONY: clean test bin cli
+clean-dist:
+	rm -f $(APP)

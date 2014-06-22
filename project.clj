@@ -1,4 +1,4 @@
-(defproject nwcljs/lein-template "0.1.2"
+(defproject nwcljs/lein-template "0.2.1"
   :description "A lein template for building node-webkit app with mocha testing enabled"
   :url "https://github.com/gizak/lein-nwcljs-template"
   :license {:name "Eclipse Public License"

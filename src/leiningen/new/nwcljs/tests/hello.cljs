@@ -9,7 +9,7 @@
 (defn hello []
   (log "greetings from {{name}}.tests.hello"))
 
-(js/describe "tests from cljs"
+(js/describe "Running cljs tests in cljs"
              (fn []
                (js/it "should be invokable"
                            (fn [] (.equal asst 1 1)))
