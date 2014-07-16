@@ -1,3 +1,7 @@
+#UPDATE
+__Attention__: Makefile and testing compilation have been changed, this README.md is NOT up-to-date!
+
+
 # nwcljs
 
 A Leiningen template for building node-webkit app out of box. Embrace ClojureScript and node js techniques in front & back end developing.
