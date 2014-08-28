@@ -10,17 +10,17 @@
   :source-paths ["src"]
   :cljsbuild {:builds [{:id "{{name}}"
                         :source-paths ["src"]
-                        :compiler {:output-dir "deploy/node_modules/{{name}}"
-                                   :output-to "deploy/node_modules/{{name}}/bootstrap.js"
-                                   :source-map "deploy/node_modules/{{name}}/bootstrap.js.map"
+                        :compiler {:output-dir "build/node_modules/{{name}}"
+                                   :output-to "build/node_modules/{{name}}/bootstrap.js"
+                                   :source-map "build/node_modules/{{name}}/bootstrap.js.map"
                                    :optimizations :simple
                                    :pretty-print true}}
                        {:id "cljstests"
-                        :source-paths ["tests"]
-                        :compiler {:output-dir "deploy/node_modules/cljstests/"
-                                   :output-to "deploy/node_modules/cljstests/cljstests.js"
+                        :source-paths ["test"]
+                        :compiler {:output-dir "build/node_modules/cljstests/"
+                                   :output-to "build/node_modules/cljstests/cljstests.js"
                                    :optimizations :none}}
                        {:id "{{name}}-dev"
                         :source-paths ["src"]
-                        :compiler {:output-dir "deploy/node_modules/cljsdev/"
+                        :compiler {:output-dir "build/node_modules/cljsdev/"
                                    :optimizations :none}}]})
