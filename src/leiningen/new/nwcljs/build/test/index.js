@@ -23,16 +23,17 @@ loadScript('./goog.js')
 
 
 try{
-    var files = glob.sync("node_modules/cljstests/{{name}}/**/*.js")
-	files.forEach(loadScript)
-	execScript()
+        var files = glob.sync("node_modules/cljstests/{{name}}/**/*.js")
+            files.push.apply(files,glob.sync("node_modules/cljstests/test/**/*.js"))
+            files.forEach(loadScript)
+            execScript()
 } catch(e) {
-    console.log("encounter an error in testing: ",e.stack)
+        console.log("encounter an error in testing: ",e.stack)
 }
 
 
 describe("Running cljs tests in nodejs",function(){
     it("should be runable",function(){
-        assert({{name}}.tests.hi.hi)
+        assert(test.hi.hi)
     })
 })

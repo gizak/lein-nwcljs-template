@@ -14,12 +14,12 @@
              [".gitigorne" (render ".gitignore" data)]
              ["Makefile" (render "Makefile" data)]
              ["project.clj" (render "project.clj" data)]
-             ["tests/hello.cljs" (render "tests/hello.cljs" data)]
-             ["tests/hi.cljs" (render "tests/hi.cljs" data)]
+             ["test/hello.cljs" (render "test/hello.cljs" data)]
+             ["test/hi.cljs" (render "test/hi.cljs" data)]
              ["src/{{sanitized}}/bootstrap.cljs" (render "src/bootstrap.cljs" data)]
-             ["deploy/index.html" (render "deploy/index.html" data)]
-             ["deploy/package.json" (render "deploy/package.json" data)]
-             ["deploy/test/index.js" (render "deploy/test/index.js" data)]
-             ["deploy/goog.js" (render "deploy/goog.js" data)]
-             "deploy/node_modules"
+             ["build/index.html" (render "build/index.html" data)]
+             ["build/package.json" (render "build/package.json" data)]
+             ["build/test/index.js" (render "build/test/index.js" data)]
+             ["build/goog.js" (render "build/goog.js" data)]
+             "build/node_modules"
              "bin")))

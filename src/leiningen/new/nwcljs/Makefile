@@ -1,31 +1,16 @@
 APP = bin/{{name}}.nw
 
-.PHONY: clean test compile watch run clean-dist compile-test
+.PHONY: clean test run build deps 
+deps:
+	cd build && npm install
 
-compile: src/{{name}} clean
+build: clean
 	lein cljsbuild once {{name}}
+	cd build && zip -r ../$(APP) *
 
-build: compile
-	cd deploy && npm install
-	cd deploy && zip -r ../$(APP) *
-ifeq ($(shell uname), Linux)
-	`which nw` $(APP)
-else
-	open -n -a node-webkit $(APP)
-endif
-
-dist: clean-dist
-	cd deploy && zip -r ../$(APP) * -x "node_modules/.bin/*"
-
-watch:
-	lein cljsbuild auto cljstests &
-
-compile-test: tests
-	lein cljsbuild once cljstests
-	cd deploy && npm install
-
-test:
-	cd deploy && node_modules/.bin/mocha --reporter=spec
+clean:
+	lein cljsbuild clean
+	rm -f $(APP)
 
 run:
 ifeq ($(shell uname), Linux)
@@ -34,8 +19,8 @@ else
 	open -n -a node-webkit $(APP)
 endif
 
-clean: clean-dist
-	lein cljsbuild clean
+test:
+	lein cljsbuild once cljstests
+	cd build && node_modules/.bin/mocha --reporter=spec
 
-clean-dist:
-	rm -f $(APP)
+
