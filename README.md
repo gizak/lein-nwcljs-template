@@ -1,4 +1,5 @@
-# nwcljs
+# nwcljs 
+![Clojars Project](http://clojars.org/nwcljs/lein-template/latest-version.svg)
 
 A Leiningen template for building node-webkit app out of box. Embrace ClojureScript and node js techniques in front & back end developing.
 
