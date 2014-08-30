@@ -1,10 +1,8 @@
-#UPDATE
-__Attention__: Makefile and testing compilation have been changed, this README.md is NOT up-to-date!
-
-
 # nwcljs
 
 A Leiningen template for building node-webkit app out of box. Embrace ClojureScript and node js techniques in front & back end developing.
+
+![basics](https://www.dropbox.com/s/rw5wytbo35px36h/output_WXrokU.gif?dl=0)
 
 ## Environment
 
@@ -14,20 +12,13 @@ nwcljs leverages GUN make system and contains some *nix specific codes, so curre
 
 __Getting started__
 
-Directly call `lein new nwcljs example` to create an example app. This will yeild some files as following:
-![tree](https://docs.google.com/uc?export=download&id=0B0cTXPTvmr_UTlBUY3BseXZUd0E)
+`make`: install dependencies.
 
-__Testing__
+`make build`: compile ClojureScript code and zip it into a node-webkit app!
 
-Run `make test` in the project root dir will invoke the testing procedure: compile cljs code into js file using test-spec config, and run a bootstrap file to eval the js file under mocha environment. Don't worry, everything is automatic. All you need to do is writing your test case file in ClojureScript favor!
+`make run`: run the app just built.
 
-![test](https://docs.google.com/uc?export=download&id=0B0cTXPTvmr_UYmd0OWFVNnFqMnc)
-
-__Building node-webkit app__
-
-Simply type `make build` to wrap up everything into your node-webkit app:
-
-![build](https://docs.google.com/uc?export=download&id=0B0cTXPTvmr_UYVJrNXhWZm8wODg)
+`make test`: run clojure-style mocha tests to check backend functionality!
 
 A say-hello demo:
 
@@ -35,8 +26,7 @@ A say-hello demo:
 
 ## TODOs
 
-1. Right now the testing compile mode is set as :simple which takes a lot of time in progress. The next step is using :none optimazition to speed up developing test.
-2. All platforms compitable code in Makefile
+1. All platforms compitable code in Makefile
 
 ## License
 
