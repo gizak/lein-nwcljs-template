@@ -2,7 +2,7 @@
 
 A Leiningen template for building node-webkit app out of box. Embrace ClojureScript and node js techniques in front & back end developing.
 
-![basics](https://www.dropbox.com/s/rw5wytbo35px36h/output_WXrokU.gif?dl=0)
+![basics](https://www.dropbox.com/s/rw5wytbo35px36h/output_WXrokU.gif?raw=1)
 
 ## Environment
 
