@@ -20,6 +20,6 @@
              ["build/index.html" (render "build/index.html" data)]
              ["build/package.json" (render "build/package.json" data)]
              ["build/test/index.js" (render "build/test/index.js" data)]
-             ["build/goog.js" (render "build/goog.js" data)]
+             ["build/goog" (render "build/goog" data)]
              "build/node_modules"
              "bin")))
