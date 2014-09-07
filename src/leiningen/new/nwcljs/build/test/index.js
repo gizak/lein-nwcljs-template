@@ -19,7 +19,7 @@ function execScript() {
 }
 
 
-loadScript('./goog.js')
+loadScript('./goog')
 
 
 try{
